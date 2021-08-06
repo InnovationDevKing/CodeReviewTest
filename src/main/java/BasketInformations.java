@@ -7,6 +7,12 @@ import java.util.HashMap;
  */
 public class BasketInformations {
 
+	// This static variables doesn't have a reason to be static, as there is no static method that could
+	// make use of it neither a reason that all classes of BasketInformations share the same contents.
+	
+	// Also localProducts coudl be better initialized in a constructor, where it's params are passed an so initialized
+	
+	
 	// The product of the basket
 	// variable name is not descritpitve of what it holds, or for what it stands for.
 	// a name as productPriceMap would be more descriptive
