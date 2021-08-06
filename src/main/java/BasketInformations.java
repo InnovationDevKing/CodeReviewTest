@@ -46,7 +46,8 @@ public class BasketInformations {
 	public boolean isBasketContains(String produit) {
 		boolean found = false;
 		for (String s : map.keySet()) {
-			if (s == produit) found = true; // If it's already found, I'd suggest to set 'return true'
+			// if (s == produit) found = true;  If it's already found, I'd suggest to set 'return true'
+			if (s == produit) return true
 		}
 		return found;
 	}
