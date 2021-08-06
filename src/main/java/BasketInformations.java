@@ -8,6 +8,8 @@ import java.util.HashMap;
 public class BasketInformations {
 
 	// The product of the basket
+	// variable name is not descritpitve of what it holds, or for what it stands for.
+	// a name as productPriceMap would be more descriptive
 	static HashMap<String, Integer> map = new HashMap<String, Integer>();
 
 	static String[] localProducts = new String[]{"123", "222", "44", "657"};
@@ -27,8 +29,8 @@ public class BasketInformations {
 
 	public Long getBasketPrice(boolean inCents) {
 		Integer v = 0;
-		for (String s : map.keySet()) {
-			v += map.get(s);
+		for (String s : map.keySet()) { // variable s could be renamed to 'product' to ease readability
+			v += map.get(s); // variable 'v' could be renamed to "totalAmount"
 		}
 		if (codeDePromotion) {
 			v -= 100;
@@ -40,14 +42,17 @@ public class BasketInformations {
 		buyBasket();
 		codeDePromotion = false;
 	}
-
+	
+	// the only using buyBasket is resetBasket(); So i'd rather move map.clear() inside resetBasket.
+	// Moreove buybasket method with a map.clear method inside is confusing. The name of the method and
+	// what it does leads to confusion.
 	public void buyBasket() {
 		map.clear();
 	}
 
 	public boolean isBasketContains(String produit) {
 		boolean found = false;
-		for (String s : map.keySet()) {
+		for (String s : map.keySet()) { // variable s, could be renamed as prodcut
 			// if (s == produit) found = true;  If it's already found, I'd suggest to set 'return true'
 			if (s == produit) return true
 		}
