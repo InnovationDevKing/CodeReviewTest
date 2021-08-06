@@ -14,6 +14,8 @@ public class BasketInformations {
 
 	// The fact that the basket has promo code
 	private static boolean codeDePromotion = false;
+	
+	private final int MAX_PRODUCTS = 50;
 
 	public void addProductToBasket(String product, Integer price, boolean isPromoCode) {
 		if (isPromoCode) {
@@ -71,7 +73,8 @@ public class BasketInformations {
 				max = map.get(s);
 			}
 		}
-		if(max > 50){
+		//if(max > 50){ // this 50 could be a static variable that gaves more context of what it means
+		if(max > MAX_PRODUCTS){ 
 			free = true;
 		}
 
